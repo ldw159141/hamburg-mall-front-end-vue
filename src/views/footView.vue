@@ -1,7 +1,7 @@
 <template>
     <div>
-<h2><img src="http://localhost:8282/image/goods/logo-01.png" alt="" />这里是页脚部分，所有商品数据从后端接口获取</h2>
-<div id="FooterBox">© LDW <br><h4>作者：刘德伟</h4><h4>联系方式:15914165802</h4></div>
+
+<div id="FooterBox"><h2>这里是页脚部分，所有商品数据从后端接口获取</h2>© LDW <br><h4>作者：刘德伟</h4><h4>联系方式:15914165802</h4></div>
     </div>
     
 </template>

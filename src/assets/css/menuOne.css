@@ -1,0 +1,259 @@
+#menu1-page{
+ width: 100%;
+ background: url('http://localhost:8282/image/goods/menu-page.jpg');
+ background-repeat: no-repeat;
+ background-position: center center;
+ background-size: cover;
+ background-attachment: scroll!important;
+}
+#menu1-page .container{
+ width: 1140px;
+ padding: 170px 0 120px 0;
+ margin: 0 auto;
+}
+#menu1-page .container .row{
+ display: flex;
+ flex-direction: column;
+ text-align: center;
+ font-family: 'Oswald';
+ color: #fff;
+ text-transform: uppercase;
+}
+#menu1-page .container .row h2{
+ font-size: 4rem;
+}
+#menu1-page .container .row nav ol{
+ display: flex;
+ flex-direction: row;
+ justify-content: center;
+ list-style: none;
+}
+#menu1-page .container .row nav ol li.active,#menu-page .container .row  nav ol li a {
+ color: #fff;
+ font-size: 0.925rem;
+ font-weight: 700;
+ text-transform: uppercase;
+ float: left;
+}
+#menu1-page .container .row nav ol li.active{
+ padding-left: 12px;
+}
+
+#menu1-page .container .row nav ol li.active::before{
+ font-size: 0.925rem;
+ display: inline-block;
+ padding-right: 10px;
+ color: #fff;
+ content: "/";
+
+}
+
+.el-tabs__item {
+	padding: 0 20px;
+	height: 40px;
+	box-sizing: border-box;
+	line-height: 40px;
+	display: inline-block;
+	list-style: none;
+	font-size: 14px;
+	font-weight: 500;
+	color: #303133;
+	position: relative;
+	margin: 0 30px;
+}
+.el-tabs--card .el-tabs__header .el-tabs__item span {
+  color: #333;
+  font-size: 12px;
+  height: 12px;
+  text-transform: uppercase;
+  font-family: "Oswald";
+  display: block;
+  line-height: 12px;
+  text-align: center;
+  font-weight: bolder;
+
+}
+
+
+.el-tabs--card > .el-tabs__header .el-tabs__nav {
+  border: none;
+}
+.el-tabs__item.is-active {
+ 
+}
+.el-tabs__item:hover {
+  
+}
+.el-tabs--card > .el-tabs__header {
+  border: none;
+}
+
+.el-tabs__header {
+  display: flex;
+  justify-content: center;
+}
+.el-tabs--card .el-tabs__header .el-tabs__item {
+  height: 60px;
+  border: none;
+  line-height: 36px;
+}
+#list .list .el-tabs__nav-scroll {
+  display: flex;
+  justify-content: center;
+}
+/* .el-tabs__nav-scroll {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  float: right;
+} */
+/* =========================menu 图片部分=========================== */
+#menu2.menu-100-70 {
+  width: 100%;
+  padding: 100px 0 30px 0;
+}
+
+#menu2 .container {
+  width: 1140px;
+  margin: 0 auto;
+}
+
+/* 这一个模块使用 flex 布局 */
+#menu2 .container .row {
+  width: 1140px;
+  /* height: 900px; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* 允许换行 */
+  margin: 0 -15px;
+  justify-content: space-between;
+  /* 多余的空间平均分布 */
+}
+
+#menu2 .container .row .item {
+  flex: 0 0 24%;
+  max-width: 24%;
+  background-color: #fafafa;
+  border: 1px solid #e5e5e5;
+  border-radius: 6px;
+  margin-bottom: 30px;
+}
+
+/* 图片样式设置 */
+#menu2 .container .item .pic {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+#menu2 .container .item .pic img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px 6px 0 0;
+  transition: all 500ms;
+}
+
+/* 图片上的编码 */
+#menu2 .container .item .item-code {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  padding: 7px 8px;
+  text-transform: uppercase;
+  color: #fff;
+  border-radius: 6px;
+  background-color: rgba(10, 10, 10, 0.4);
+  font-size: 0.915rem;
+}
+
+/* 放大缩小图标 */
+#menu2 .container .item .item-zoom-ico {
+  position: absolute;
+  display: block;
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  background-color: rgba(20, 20, 20, 0.45);
+  border-radius: 100%;
+  left: 15px;
+  bottom: 15px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* =========================menu 文字部分=========================== */
+#menu2 .container .item .txt {
+  overflow: hidden;
+  padding: 25px 20px;
+  position: relative;
+}
+
+/* 关注 */
+#menu2 .container .item .txt a.collect {
+  display: block;
+  position: absolute;
+  top: 28px;
+  right: 15px;
+  text-decoration: none;
+}
+
+/* 商品标题 */
+#menu2 .container .item .txt h5.title {
+  font-size: 1.375rem;
+  margin: 5px 0 10px 0;
+  line-height: 1.3;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: "Oswald", sans-serif;
+}
+
+/* 商品描述 */
+#menu2 .container .item .txt p {
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #757575;
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+}
+
+/* 商品价格 */
+#menu2 .container .item .txt h5.price {
+  display: inline-block;
+  padding: 7px 12px;
+  border-radius: 4px;
+  background-color: #642f21;
+  color: #f7be27;
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: -0.5px;
+  line-height: 1;
+  font-family: "Oswald", sans-serif;
+}
+
+/* 加入购物车 */
+#menu2 .container .item .txt a.cart {
+  opacity: 0;
+  position: absolute;
+  right: 20px;
+  bottom: 15px;
+  display: inline-block;
+  font-size: 0.9rem;
+  line-height: 1;
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: 4px;
+  transition: all 500ms;
+  font-size: 0.9rem;
+  background-color: #f7be27;
+}
+
+/* CSS3 动画 购物车和图片放大动画 */
+#menu2 .container .item:hover a.cart {
+  opacity: 1;
+  transform: translateY(-10px);
+}
+
+#menu2 .container .item:hover img {
+  transform: scale(1.2);
+}

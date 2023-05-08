@@ -14,7 +14,7 @@
         </div>
       </el-carousel-item>
     </el-carousel>
-
+<!-- 导航栏开始 -->
     <div class="header" ref="nav" :class="{ sticky: isSticky }">
       <div class="nav">
         <div class="logo">
@@ -34,6 +34,7 @@
         </ul>
       </div>
     </div>
+    <!-- 导航栏结束 -->
     <div><goods-view></goods-view></div>
     <div><hot-goods/></div>
     <div><foot-view/></div>

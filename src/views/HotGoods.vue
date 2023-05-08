@@ -58,7 +58,7 @@
                   ref="previewImg"
                   :preview-src-list="item.urls" 
                 >
-                <!-- 这样写的最大缺点是如果有任何一个数据中的img不是2个，就会显示报错 -->
+
                 </el-image>
                 <span class="item-code">{{item.coder}}</span>
                 <span class="item-zoom-ico" @click="onPreview">
