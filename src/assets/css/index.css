@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* 是否吸顶 */
+div.header.sticky {
+    position: fixed;
+    transition: color 0.2s linear;
+    transition: background 0.2s linear;
+    background-color: #f5f5f5;
+    color: #000;
+    top: 0;
+    z-index: 99999999;
+}
+
+/* 基础样式*/
+div.header {
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    background-color: transparent;
+    top: 0;
+    z-index: 9999;
+    color: white;
+}
+
+div.header div.nav {
+    width: 1100px;
+    height: 80px;
+    margin: 0 auto;
+}
+
+div.logo {
+    float: left;
+}
+
+div.logo img {
+    width: auto;
+    height: 80px;
+    transform: translateX(50px);
+}
+
+div.nav ul {
+    height: 80px;
+    float: right;
+}
+
+div.nav ul li {
+    padding: 0 14px;
+    float: left;
+    list-style-type: none;
+    line-height: 80px;
+    font-family: 'Oswald';
+    font-size: 1.1rem;
+    font-weight: 900;
+    position: relative;
+}
+
+/* 下拉三角 */
+
+div.nav ul li span::before {
+    position: relative;
+    top: -5px;
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    margin-left: 8px;
+    content: "";
+    /* border-color: #c1c1c1; */
+    border-style: solid;
+    border-width: 2px 2px 0 0;
+    transform: rotate(135deg);
+}
+
+/* 黄色电话号码 */
+div.nav li.yellow-color {
+    color: #f7be27;
+}
+
+/* 购物袋 及   数字 */
+div.nav ul li.basket-ico a {
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+}
+
+div.nav ul li.basket-ico em.roundpoint {
+    color: #fff;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 100%;
+    line-height: 18px;
+    text-align: center;
+    font-size: 12px;
+    position: absolute;
+    top: -8px;
+    right: -2px;
+}
