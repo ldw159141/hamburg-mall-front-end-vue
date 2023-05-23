@@ -30,6 +30,16 @@ const routes = [
     name: '菜单1',
     component:()=>import('../views/menuOneView.vue')
   },
+  {
+    path: '/nav',
+    name: "导航栏",
+    component:()=>import('../views/Component/navView.vue')
+  },
+  {
+    path: '/goodsDetailed',
+    name: '商品详细',
+    component:()=>import('../views/goodsDetailed.vue')
+  }
        
 
 
