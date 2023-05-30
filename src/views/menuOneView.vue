@@ -3,7 +3,7 @@
   
   <div>
     <!-- 导航栏开始 -->
-    <nav-view></nav-view>
+    <!-- <nav-view></nav-view> -->
     <!-- 导航栏结束 -->
     <!-- 图片和路径导航开始 -->
     <div id="menu1-page">
@@ -82,16 +82,13 @@
       </div>
     </div>
     <!-- 商品列表结束   -->
-   <div><foot-view/></div>
+   <!-- <div><foot-view/></div> -->
   </div>
 </template>
 
 <script>
 import Axios from 'axios';
-import footView from './footView.vue';
-import NavView from './Component/navView.vue';
 export default {
-  components: { footView, NavView },
   data: function () {
     return {
       activeName:"0",

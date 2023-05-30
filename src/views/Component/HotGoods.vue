@@ -20,7 +20,7 @@
                 >
                 </el-image>
                 <span class="item-code">{{ item.coder }}</span>
-                <span class="item-zoom-ico" @click="onPreview">
+                <span class="item-zoom-ico">
                   <i class="iconfont icon-quanping_o"></i>
                 </span>
               </div>
@@ -61,7 +61,8 @@
 
                 </el-image>
                 <span class="item-code">{{item.coder}}</span>
-                <span class="item-zoom-ico" @click="onPreview">
+                <!-- <span class="item-zoom-ico" @click="onPreview"> -->
+                  <span class="item-zoom-ico" >
                   <i class="iconfont icon-quanping_o"></i>
                 </span>
               </div>
@@ -74,56 +75,22 @@
 </template>
 
 <script >
-import  { getBaseUrl,requestUtil,getRespBaseUrl } from '@/util/requestUtil'; 
 import Axios from 'axios';
 export default {
   name: "hotgoods",
   data: function () {
     return {
-      baseurl: '',
+
      
-      hotslist: {
-      }
+      hotslist: []
+      
         
-        
-        // {
-        //   id:'',
-        //   coder: '',
-        //   title: '',
-        //   description: '',
-        //   price: '',
-        //   promoPrice: '',
-        //   stock:'',
-        //       viewer: {
-        //     url: '',
-        //     srcList: [
-        //       require("../assets/images/burger-12.jpg"),
-        //       require("../assets/images/burger-13.jpg"),
-        //     ],
-        //   },
-        //   typeId:''
-        // },
-        // {
-        //   code: "0201",
-        //   title: "CRISPY CHICKEN",
-        //   description:
-        //     "Chicken breast, chilli sauce, tomatoes, pickles, coleslaw",
-        //   price: 11.9,
-        //   promoPrice: 9.9,
-        //   viewer: {
-        //     url: require("../assets/images/burger-11.jpg"),
-        //     srcList: [
-        //       require("../assets/images/burger-12.jpg"),
-        //       require("../assets/images/burger-13.jpg"),
-        //     ],
-        //   },
-        //     },
+
         
         
       
     };
   },
-// http://localhost:8282/image/goods/burger-11.jpg
 
    created() {
      this.getHotGoodsList()
@@ -150,14 +117,6 @@ export default {
       console.log(_this.hotslist)
     });
 
-
-//requestUtil使用promiss回调函数没操作成功，直接使用axios复杂了会导致回调地狱
-      // requestUtil({url: "/goods/findGoods/"}).then(
-      //   result=>{
-      //     const baseurl = getBaseUrl();
-      //     _this.hotslist = result.data;
-      //      _this.baseurl=baseurl+'/image/goods/'
-      //   })
 
         
     }

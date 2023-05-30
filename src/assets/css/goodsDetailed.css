@@ -1,171 +1,171 @@
 /* --------------------------product------------------- */
-#product{
-width:100%;
-padding: 70px 0 60px 0;
+#product {
+  width: 100%;
+  padding: 70px 0 60px 0;
 }
-#product .product{
-width: 1300px;
-margin: 0 auto;
-display: flex;
-flex-direction: row;
-flex-basis: 50%;
-flex-wrap: wrap;
-}
-
-#product .product div.tabs, #product .product .txt{
-flex: 0 0 50%;
-height: 700px;
+#product .product {
+  width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-basis: 50%;
+  flex-wrap: wrap;
 }
 
-#product .product .txt{
-flex: 0 0 40%;
-padding-left: 8%;
+#product .product div.tabs,
+#product .product .txt {
+  flex: 0 0 50%;
+  height: 700px;
 }
 
-#product .product div.description{
-flex: 0 0 100%;
-background-color: #f1f1f1;
+#product .product .txt {
+  flex: 0 0 40%;
+  padding-left: 8%;
 }
 
-#product .product  .tabs .el-tabs{
-width: 100%;
-}
-#product .product  .tabs .el-tabs .el-tabs__content{
-width: 100%;
+#product .product div.description {
+  flex: 0 0 100%;
+  background-color: #f1f1f1;
 }
 
-#product .tabs .el-tabs__nav-scroll{
-display: flex;
-justify-content: center;
+#product .product  .tabs .el-tabs {
+  width: 100%;
 }
-#product .tabs .tabs-img{
-width: 78px;
-border: 1px solid #eee;
-padding: 15px;
-margin: 0 4px;
-border-radius: 6px;
-opacity: 0.7;
-transition: 0.6s;
-}
-#product .el-tabs__nav-wrap::after{
-height: 0;
+#product .product  .tabs .el-tabs .el-tabs__content {
+  width: 100%;
 }
 
-#product .el-tabs__active-bar{
-background-color:transparent;
+#product .tabs .el-tabs__nav-scroll {
+  display: flex;
+  justify-content: center;
+}
+#product .tabs .tabs-img {
+  width: 78px;
+  border: 1px solid #eee;
+  padding: 15px;
+  margin: 0 4px;
+  border-radius: 6px;
+  opacity: 0.7;
+  transition: 0.6s;
+}
+#product .el-tabs__nav-wrap::after {
+  height: 0;
 }
 
-#product .el-tabs__item.is-active .tabs-img{
-opacity: 1;
-border: 1px solid #ddd;
+#product .el-tabs__active-bar {
+  background-color: transparent;
 }
 
-#product .product .el-tabs__content img{
-width: 100%;
+#product .el-tabs__item.is-active .tabs-img {
+  opacity: 1;
+  border: 1px solid #ddd;
+}
+
+#product .product .el-tabs__content img {
+  width: 100%;
 }
 /* ---------------txt------------------ */
-#product .product .txt{
-font-family: 'Oswald', sans-serif;
+#product .product .txt {
+  font-family: "Oswald", sans-serif;
 }
-#product .product .txt h2{
-font-size: 3em;
-font-weight: 1200;
-letter-spacing:0;
-font-weight: bolder;
-text-shadow: 0 0 2px 2px #000;
+#product .product .txt h2 {
+  font-size: 3em;
+  font-weight: 1200;
+  letter-spacing: 0;
+  font-weight: bolder;
+  text-shadow: 0 0 2px 2px #000;
 }
-#product .product .review{
-font-family:  sans-serif;
-font-weight: 100;
+#product .product .review {
+  font-family: sans-serif;
+  font-weight: 100;
 }
-#product .product h3{
-color: #f7be27;
-font-size: 2em;
-margin: 10px 0 15px 0;
+#product .product h3 {
+  color: #f7be27;
+  font-size: 2em;
+  margin: 10px 0 15px 0;
 }
-#product .product h3 span{
-color: #aaa;
-text-decoration: line-through;
-margin-right: 5px;
+#product .product h3 span {
+  color: #aaa;
+  text-decoration: line-through;
+  margin-right: 5px;
 }
-#product .product .description{
-font-family:  sans-serif;
-font-weight: 100;
-color:#757575;
-line-height: 1.6;
-margin-bottom: 15px;
+#product .product .description {
+  font-family: sans-serif;
+  font-weight: 100;
+  color: #757575;
+  line-height: 1.6;
+  margin-bottom: 15px;
 }
-#product .product .product-info{
-margin-bottom: 20px;
+#product .product .product-info {
+  margin-bottom: 20px;
 }
-#product .product .product-info p{
-font-family:  sans-serif;
-font-weight: 500;
-line-height: 2.5em;
-border-bottom: 1px dotted #ccc;
+#product .product .product-info p {
+  font-family: sans-serif;
+  font-weight: 500;
+  line-height: 2.5em;
+  border-bottom: 1px dotted #ccc;
 }
-#product .product .product-info span{
-float: right;
-line-height: 2em;
+#product .product .product-info span {
+  float: right;
+  line-height: 2em;
 }
-#product .product .qty{
-height: 43px;
-font-size: 1.3rem;
-padding: 0 3px 0 6px;
-margin-right: 6px;
-border: none;
-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.16);
-border-radius: 4px;
-overflow: visible; 
+#product .product .qty {
+  height: 43px;
+  font-size: 1.3rem;
+  padding: 0 3px 0 6px;
+  margin-right: 6px;
+  border: none;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.16);
+  border-radius: 4px;
+  overflow: visible;
 }
-#product .product a.cart{
-background-color: #f7be27;
-padding: 12px 25px;
-text-decoration: none;
-color: #000;
-font-family:  sans-serif;
-border-radius: 5px;
-
+#product .product a.cart {
+  background-color: #f7be27;
+  padding: 12px 25px;
+  text-decoration: none;
+  color: #000;
+  font-family: sans-serif;
+  border-radius: 5px;
 }
-#product .product .txt-list{
-float: left;
-font-family:  sans-serif;
-font-weight: 200;
-margin: 20px 0 0 20px;
-line-height: 1.5;
+#product .product .txt-list {
+  float: left;
+  font-family: sans-serif;
+  font-weight: 200;
+  margin: 20px 0 0 20px;
+  line-height: 1.5;
 }
 
 /* ------------description------------ */
-#product .product .description img{
-width: 80px;
-height: 80px;
-border-radius: 100%;
-float: left;
+#product .product .description img {
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  float: left;
 }
 
-#product .product .description .review-info{
-padding-bottom: 30px;
-border-bottom: 1px dotted #ccc;
-margin-top: 30px;
+#product .product .description .review-info {
+  padding-bottom: 30px;
+  border-bottom: 1px dotted #ccc;
+  margin-top: 30px;
 }
-#product .product .description .review-info h5{
-display: inline-block;
-font-size: 1.25rem;
-text-transform: uppercase;
-font-family: 'Oswald';
-}
-
-#product .product .description .review-info p{
-margin-top: 10px;
-}
-#product .product .description .description-con p{
-margin: 10px 0;
-}
-#product .product .description .description-con ul li span{
-font-weight: bold;
+#product .product .description .review-info h5 {
+  display: inline-block;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  font-family: "Oswald";
 }
 
-#product .product .description .el-tabs__nav-scroll{
-display: flex;
-justify-content: center;
+#product .product .description .review-info p {
+  margin-top: 10px;
+}
+#product .product .description .description-con p {
+  margin: 10px 0;
+}
+#product .product .description .description-con ul li span {
+  font-weight: bold;
+}
+
+#product .product .description .el-tabs__nav-scroll {
+  display: flex;
+  justify-content: center;
 }

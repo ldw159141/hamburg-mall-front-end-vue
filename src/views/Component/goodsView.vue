@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- <HomeView/> -->
     <section id="promo" class="promo-100">
       <div class="container">
         <div class="left">
@@ -46,6 +45,7 @@
         </div>
       </div>
     </section>
+   
   </div>
 </template>
 
@@ -53,32 +53,21 @@
 import Axios from 'axios';
 
 
+
 export default {
+
   name: "goods",
   data: function () {
     return {
         goodList: [
-        //   {
-        //     code: "0650",
-        //     title: "Crispy Chicken",
-        //     description:
-        //       "Chicken breast, chilli sauce, tomatoes, pickles, coleslaw",
-        //     price: "$8.50",
-        //     viewer: {
-        //       url: require("../assets/images/burger-11.jpg"),
-        //       srclist: [
-        //          require("../assets/images/burger-12.jpg"),
-        //        require("../assets/images/burger-13.jpg")
-        //       ],
-        //     },
-        // }, 
-
         ],
+      
     }
 
   },
   created() {
      this.getGoodsList()
+  
   },
   methods: {
     getGoodsList() {
@@ -97,7 +86,8 @@ export default {
       }
 
       }
-  )}
+  )},
+  
   }
   
 };

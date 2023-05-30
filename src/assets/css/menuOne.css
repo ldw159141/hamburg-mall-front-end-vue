@@ -1,65 +1,65 @@
-#menu1-page{
- width: 100%;
- background: url('http://localhost:8282/image/goods/menu-page.jpg');
- background-repeat: no-repeat;
- background-position: center center;
- background-size: cover;
- background-attachment: scroll!important;
+#menu1-page {
+  width: 100%;
+  background: url("http://localhost:8282/image/goods/menu-page.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: scroll !important;
 }
-#menu1-page .container{
- width: 1140px;
- padding: 170px 0 120px 0;
- margin: 0 auto;
+#menu1-page .container {
+  width: 1140px;
+  padding: 170px 0 120px 0;
+  margin: 0 auto;
 }
-#menu1-page .container .row{
- display: flex;
- flex-direction: column;
- text-align: center;
- font-family: 'Oswald';
- color: #fff;
- text-transform: uppercase;
+#menu1-page .container .row {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-family: "Oswald";
+  color: #fff;
+  text-transform: uppercase;
 }
-#menu1-page .container .row h2{
- font-size: 4rem;
+#menu1-page .container .row h2 {
+  font-size: 4rem;
 }
-#menu1-page .container .row nav ol{
- display: flex;
- flex-direction: row;
- justify-content: center;
- list-style: none;
+#menu1-page .container .row nav ol {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  list-style: none;
 }
-#menu1-page .container .row nav ol li.active,#menu-page .container .row  nav ol li a {
- color: #fff;
- font-size: 0.925rem;
- font-weight: 700;
- text-transform: uppercase;
- float: left;
+#menu1-page .container .row nav ol li.active,
+#menu-page .container .row  nav ol li a {
+  color: #fff;
+  font-size: 0.925rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  float: left;
 }
-#menu1-page .container .row nav ol li.active{
- padding-left: 12px;
+#menu1-page .container .row nav ol li.active {
+  padding-left: 12px;
 }
 
-#menu1-page .container .row nav ol li.active::before{
- font-size: 0.925rem;
- display: inline-block;
- padding-right: 10px;
- color: #fff;
- content: "/";
-
+#menu1-page .container .row nav ol li.active::before {
+  font-size: 0.925rem;
+  display: inline-block;
+  padding-right: 10px;
+  color: #fff;
+  content: "/";
 }
 
 .el-tabs__item {
-	padding: 0 20px;
-	height: 40px;
-	box-sizing: border-box;
-	line-height: 40px;
-	display: inline-block;
-	list-style: none;
-	font-size: 14px;
-	font-weight: 500;
-	color: #303133;
-	position: relative;
-	margin: 0 30px;
+  padding: 0 20px;
+  height: 40px;
+  box-sizing: border-box;
+  line-height: 40px;
+  display: inline-block;
+  list-style: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: #303133;
+  position: relative;
+  margin: 0 30px;
 }
 .el-tabs--card .el-tabs__header .el-tabs__item span {
   color: #333;
@@ -71,18 +71,14 @@
   line-height: 12px;
   text-align: center;
   font-weight: bolder;
-
 }
-
 
 .el-tabs--card > .el-tabs__header .el-tabs__nav {
   border: none;
 }
 .el-tabs__item.is-active {
- 
 }
 .el-tabs__item:hover {
-  
 }
 .el-tabs--card > .el-tabs__header {
   border: none;

@@ -1,10 +1,10 @@
 <template>
   <div>
-   <!-- 导航栏开始 -->
-   <div><nav-view/></div>
+    <!-- 导航栏开始 -->
+    <!-- <div><nav-view /></div> -->
     <!-- 导航栏结束 -->
-     <!-- 图片和路径导航开始 -->
-    <div id="menu1-page">
+    <!-- 图片和路径导航开始 -->
+    <div id="menu2-page">
       <div class="container">
         <div class="row">
           <nav>
@@ -22,16 +22,23 @@
                  
       <div class="product">
                        
-      <div class="tabs">
-                    <el-tabs :tab-position="tabPosition" style="height: 200px;">
-                        <el-tab-pane v-for="url in goods[0].viewer.url" :key="url">
-                            <template slot="label">
-                                <img class="tabs-img" :src="url" alt="">
-                            </template>
-                            <img :src="url" alt="">
-                        </el-tab-pane>
-                    </el-tabs>
-                </div>
+        <div class="tabs">
+                             
+          <el-tabs :tab-position="tabPosition" style="height: 200px">
+                                   
+            <el-tab-pane v-for="url in goods[0].viewer.url" :key="url">
+                                         
+              <template slot="label">
+                                               
+                <img class="tabs-img" :src="url" alt="" />                      
+                     
+              </template>
+                <img :src="url" alt="" />                        
+            </el-tab-pane>
+                               
+          </el-tabs>
+                         
+        </div>
                        
         <div class="txt">
                              
@@ -166,8 +173,11 @@
                                                
                 <div class="photo">
                                                      
-                  <img src="picture/review-author-1.jpg" alt="" />              
-                                   
+                  <img
+                    src="http://localhost:8282/image/goods/review-author-1.jpg"
+                    alt=""
+                  />
+                                                 
                 </div>
                                                
                 <div class="review-info">
@@ -195,8 +205,11 @@
                                                
                 <div class="photo">
                                                      
-                  <img src="picture/review-author-2.jpg" alt="" />              
-                                   
+                  <img
+                    src="http://localhost:8282/image/goods/review-author-2.jpg"
+                    alt=""
+                  />
+                                                 
                 </div>
                                                
                 <div class="review-info">
@@ -224,8 +237,11 @@
                                                
                 <div class="photo">
                                                      
-                  <img src="picture/review-author-3.jpg" alt="" />              
-                                   
+                  <img
+                    src="http://localhost:8282/image/goods/review-author-3.jpg"
+                    alt=""
+                  />
+                                                 
                 </div>
                                                
                 <div class="review-info">
@@ -258,21 +274,19 @@
       </div>
              
     </div>
-      <!-- 底部页脚开始 -->
-  <div><foot-view/></div>
-   <!-- 底部页脚结束 -->
+    <!-- 底部页脚开始 -->
+    <!-- <div><foot-view /></div> -->
+    <!-- 底部页脚结束 -->
   </div>
-
 </template>
 <script>
-import navView from "./Component/navView.vue";
-import FootView from './footView.vue';
+
 export default {
-  components: { navView, FootView },
+
   data: function () {
     return {
-        goods: [
-                  {
+      goods: [
+        {
           code: "0201",
           title: "CRISPY CHICKEN",
           description:
@@ -280,26 +294,24 @@ export default {
           price: 11.9,
           promoPrice: 9.9,
           viewer: {
-              url: [
-                  "http://localhost:8282/image/goods/burger-11.jpg",
-                  "http://localhost:8282/image/goods/burger-12.jpg",
-            "http://localhost:8282/image/goods/burger-13.jpg"
-            ]
+            url: [
+              "http://localhost:8282/image/goods/burger-11.jpg",
+              "http://localhost:8282/image/goods/burger-12.jpg",
+              "http://localhost:8282/image/goods/burger-13.jpg",
+            ],
             // srcList: [
             //  "http://localhost:8282/image/goods/burger-12.jpg",
             // "http://localhost:8282/image/goods/burger-13.jpg"
             // ],
           },
-            },
-        ]
-        
-        
-    }
+        },
+      ],
+    };
   },
 };
 </script>
 <style scoped>
 /*奇怪了这里按理说不引入也会被其他引入页面的污染，但是更新之后没有污染，需要引入*/
-@import url("@/assets/css/menuOne.css");
+@import url("@/assets/css/menuTwo.css");
 @import url("@/assets/css/goodsDetailed.css");
 </style>
