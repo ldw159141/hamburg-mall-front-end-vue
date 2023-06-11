@@ -57,11 +57,7 @@ export default {
     return {
       baseurl: "",
       slideList: [
-        // {
-        //   url: require("../assets/images/slide-4.jpg"),
-        //   tit1: "<h2>CHICKEN FINGERS1</h2>",
-        //   tit2: "<h3>Only<span class='yellow'>￥6.99 </span></h3>",
-        // },
+       
       ],
     };
   },
@@ -76,10 +72,10 @@ export default {
     getSlideList() {
       const _this = this;
       Axios.get("http://localhost:8282/goods/findSlide/").then(function (resp) {
-        console.log(resp);
-        _this.slideList = resp.data.data;
+        //console.log(resp);
+        _this.slideList = resp.data.data.data;
         _this.baseurl = "http://localhost:8282/image/goods/";
-        console.log(_this.slideList);
+       // console.log(_this.slideList);
       });
 
       //    requestUtil({url: "/goods/findSlide/"}).then(

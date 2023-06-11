@@ -40,7 +40,11 @@ const routes = [
         name: "商品详细",
         component: () => import("../views/goodsDetailed.vue"),
       },
-     
+      {
+        path: "/shoppingCart",
+        name: "购物车",
+        component: () => import("../views/shoppingCart.vue"),
+      },
      
     ],
   },
@@ -49,6 +53,7 @@ const routes = [
     name: "页脚",
     component: () => import("../views/Component/footView.vue"),
   },
+
   // {
   //   path: '/goodsDetailed',
   //   name: '商品详细',

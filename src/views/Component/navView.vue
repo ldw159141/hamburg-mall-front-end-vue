@@ -21,11 +21,28 @@
             <router-link to="/goodsDetailed">详情</router-link>
           </li> -->
           <li class="yellow-color">159-1416-5802</li>
+         <router-link to="/shoppingCart"> 
           <li class="basket-ico">
             <a href="">
               <i style="font-size: 32px" class="el-icon-shopping-bag-2">   </i>
               <em class="roundpoint">2</em>
             </a>
+          </li>
+        </router-link>
+
+       <li>
+          <p class="el-icon-user-solid" v-if="admin==null" >
+                <router-link to="/login" style="color: #000;">请登录</router-link>  
+                  </p> 
+                <el-dropdown v-if="admin!=null">
+                   <p class="el-icon-user-solid" >
+                   {{ admin.username }}
+                   <i class="el-icon-arrow-down el-icon--right home_userinfo"></i>
+                  </p> 
+                    <el-dropdown-menu slot="dropdown">
+                        <el-dropdown-item @click.native="logout">退出登录</el-dropdown-item>
+                    </el-dropdown-menu>      
+                </el-dropdown>          
           </li>
         </ul>
       </div>
@@ -65,12 +82,12 @@ export default {
         {
           compName: "MEGAMENU",
           itemName: "菜单介绍",
-          com: "goodsDetailed",
+          com: "",
         },
         {
           compName: "SHOP",
           itemName: "分店介绍",
-          com: "hot",
+          com: "",
         },
         {
           compName: "BLOG",
@@ -83,6 +100,11 @@ export default {
           com: "",
         },
       ],
+      admin:{ username:'ldw'}
+        
+         
+          
+      
     };
   },
 

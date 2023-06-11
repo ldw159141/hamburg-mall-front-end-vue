@@ -24,16 +24,16 @@
                        
         <div class="tabs">
                              
-          <el-tabs :tab-position="tabPosition" style="height: 200px">
+          <el-tabs  style="height: 200px">
                                    
-            <el-tab-pane v-for="url in goods[0].viewer.url" :key="url">
-                                         
+            <el-tab-pane v-for="item in good.goodsimg" :key="item">
+                      <img :src="item" alt="" />                     
               <template slot="label">
                                                
-                <img class="tabs-img" :src="url" alt="" />                      
+             <img class="tabs-img" :src="item" alt="" />                  
                      
               </template>
-                <img :src="url" alt="" />                        
+                                      
             </el-tab-pane>
                                
           </el-tabs>
@@ -42,17 +42,14 @@
                        
         <div class="txt">
                              
-          <h2>SMOKEY HOUSE</h2>
+          <h2>{{good.title}}</h2>
                              
           <p class="review">4.38 (3 Customer Reviews)</p>
                              
-          <h3 class="price"><span>$9.95</span> $8.60</h3>
+          <h3 class="price"><span>${{good.price}}</span> ${{good.promoPrice}}</h3>
                              
           <p class="description" style="word-wrap: break-word">
-            Integer congue magna at pretium purus pretium                      
-              ligula rutrum risus                         ultrice luctus ligula
-            congue a vitae auctor sapien gravida enim ipsum congue morbi
-            pretium.
+             {{ good.description }}
           </p>
                              
           <div class="product-info">
@@ -280,34 +277,48 @@
   </div>
 </template>
 <script>
+import Axios from 'axios';
 
 export default {
 
   data: function () {
     return {
-      goods: [
-        {
-          code: "0201",
-          title: "CRISPY CHICKEN",
-          description:
-            "Chicken breast, chilli sauce, tomatoes, pickles, coleslaw",
-          price: 11.9,
-          promoPrice: 9.9,
-          viewer: {
-            url: [
-              "http://localhost:8282/image/goods/burger-11.jpg",
-              "http://localhost:8282/image/goods/burger-12.jpg",
-              "http://localhost:8282/image/goods/burger-13.jpg",
-            ],
-            // srcList: [
-            //  "http://localhost:8282/image/goods/burger-12.jpg",
-            // "http://localhost:8282/image/goods/burger-13.jpg"
-            // ],
-          },
-        },
+      good: [
+        // {
+        //   code: "0201",
+        //   title: "CRISPY CHICKEN",
+        //   description:
+        //     "Chicken breast, chilli sauce, tomatoes, pickles, coleslaw",
+        //   price: 11.9,
+        //   promoPrice: 9.9,
+        //   viewer: {
+        //     url: [
+        //       "http://localhost:8282/image/goods/burger-11.jpg",
+        //       "http://localhost:8282/image/goods/burger-12.jpg",
+        //       "http://localhost:8282/image/goods/burger-13.jpg",
+        //     ],
+         
+        //   },
+        // },
       ],
     };
   },
+
+  created() {
+          this.getGoods()
+            
+        },
+        methods: {
+          getGoods(){
+            const _this=this
+            Axios.get('http://localhost:8282/goodsimg/selectByGoodsId/'+this.$route.query.id).then(function (resp) {
+              
+              _this.good = resp.data.data
+              _this.baseurl = 'http://localhost:8282/image/goods/'
+          })
+          }
+        },
+
 };
 </script>
 <style scoped>

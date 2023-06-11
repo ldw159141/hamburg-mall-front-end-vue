@@ -17,9 +17,9 @@
     <section id="menu" class="menu-100-70">
       <div class="container">
         <div class="row">
-          <div class="item" v-for="(item, index) in goodList" :key="index">
+          <div class="item" v-for="(item, index) in goodList" :key="index" >
             <div class="pic">
-              <!-- <img src="../assets/images/burger-11.jpg" alt="" /> -->
+             
               <el-image :src="baseurl+item.url" 
               ref="" 
               :preview-src-list="item.urls">
@@ -29,7 +29,7 @@
                 <i class="iconfont icon-quanping_o"></i>
               </span>
             </div>
-            <div class="txt">
+            <div class="txt" @click="select(item)">
               <a class="collect" href=""
                 ><span class="iconfont icon-changyongtubiao-fuben-68"></span
               ></a>
@@ -87,6 +87,9 @@ export default {
 
       }
   )},
+  select(item){
+                this.$router.push('/goodsDetailed?id='+item.id)
+            },
   
   }
   

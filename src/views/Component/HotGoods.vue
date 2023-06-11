@@ -16,7 +16,7 @@
                 <el-image
                   :src="baseurl+item.url"
                   ref="previewImg"
-                  :preview-src-list="item.urls"  
+                  :preview-src-list="item.goodsimg"  
                 >
                 </el-image>
                 <span class="item-code">{{ item.coder }}</span>
@@ -56,7 +56,7 @@
                 <el-image
                   :src="baseurl+item.url"
                   ref="previewImg"
-                  :preview-src-list="item.urls" 
+                  :preview-src-list="item.goodsimg" 
                 >
 
                 </el-image>
@@ -101,18 +101,19 @@ export default {
     getHotGoodsList() {
 
      const _this = this;
-    Axios.get("http://localhost:8282/goods/hotGoodsList/").then(function (resp) {
-      console.log(resp)
+    Axios.get("http://localhost:8282/goods/newHotGoodsList/").then(function (resp) {
+      // console.log(resp)
       _this.hotslist = resp.data.data.data
       _this.baseurl = 'http://localhost:8282/image/goods/'
-      for (var k in _this.hotslist) {
-       var img=[]
-        var goodsimg = _this.hotslist[k].goodsimg
-        for (var i in goodsimg) {
-          img.push(_this.baseurl + goodsimg[i].url)
-        }
-        _this.hotslist[k]["urls"]= img
-      }
+      // for (var k in _this.hotslist) {
+      //  var img=[]
+      //   var goodsimg = _this.hotslist[k].goodsimg
+      //   for (var i in goodsimg) {
+      //     img.push(_this.baseurl + goodsimg[i])
+      //   }
+      //   _this.hotslist[k]["urls"]= img
+      // }
+    
 
       console.log(_this.hotslist)
     });
