@@ -10,6 +10,15 @@ import './assets/css/iconfontcss.css'
 import './assets/css/iconfont.css'
 Vue.config.productionTip = false
  
+
+router.beforeEach((to, from, next) => {
+  if (to.path == '/login') {
+    //保存当前路由
+      localStorage.setItem("preRoute", router.currentRoute.fullPath)
+  }
+  next()
+})
+
 new Vue({
   router,
   store,

@@ -54,6 +54,11 @@ const routes = [
     component: () => import("../views/Component/footView.vue"),
   },
 
+  {
+    path: "/login",
+    name: "登录",
+    component: () => import("../views/Login.vue"),
+  },
   // {
   //   path: '/goodsDetailed',
   //   name: '商品详细',

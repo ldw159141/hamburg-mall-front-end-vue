@@ -124,6 +124,7 @@ export default {
   },
   created() {
    this.handleClick(tab.index == 0)
+ 
    
   },
   
@@ -137,11 +138,7 @@ export default {
       console.log(tab, event);
       if (tab.index == 0) {
         this.goodList = []
-
-        
-        //网络请求1  
-       //  alert(0)   
-         {
+       {
       const _this = this
       Axios.get("http://localhost:8282/goods/goodsList/").then(function (resp) {
         console.log(resp)
@@ -173,6 +170,7 @@ export default {
         
       }
     },
+
 
   
 

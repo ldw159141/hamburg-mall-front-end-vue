@@ -73,9 +73,10 @@
             value="1"
           />
                              
-          <a class="cart" href="cart.html"
-            ><i class="iconfont icon-24gl-bag"></i> Add to Cart</a
-          >
+          <a  class="cart" v-if="admin!=null" href="/shoppingCart">
+            <i class="iconfont icon-24gl-bag"></i> Add to Cart</a>
+            <a  class="cart" v-if="admin==null" @click="message">
+            <i class="iconfont icon-24gl-bag"></i> Add to Cart</a>
 
                              
           <ul class="txt-list">
@@ -278,11 +279,13 @@
 </template>
 <script>
 import Axios from 'axios';
+import ElementUI from 'element-ui';
 
 export default {
 
   data: function () {
     return {
+      admin:null,
       good: [
         // {
         //   code: "0201",
@@ -306,18 +309,26 @@ export default {
 
   created() {
           this.getGoods()
+          let admin = JSON.parse(window.localStorage.getItem('userInfo'))
+          this.admin = admin
             
         },
         methods: {
-          getGoods(){
+        getGoods(){
             const _this=this
             Axios.get('http://localhost:8282/goodsimg/selectByGoodsId/'+this.$route.query.id).then(function (resp) {
               
               _this.good = resp.data.data
               _this.baseurl = 'http://localhost:8282/image/goods/'
           })
-          }
+          },
+
+
+        message(){
+          ElementUI.Message.error("请先登录")
+        }
         },
+
 
 };
 </script>

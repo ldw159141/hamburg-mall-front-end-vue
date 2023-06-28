@@ -7,15 +7,15 @@
           <nav>
             <ol>
               <li><a href="/">HOME</a></li>
-              <li class="active">Menu #1</li>
+              <li class="active">shoppingCart</li>
             </ol>
           </nav>
-          <h2>Main Menu #1</h2>
+          <h2>ShoppingCart</h2>
         </div>
       </div>
     </div>
     <!-- 图片和路径导航结束 -->
-<p style="font-size: 20ch; text-align:center;">这里是购物车页面</p>
+<!-- <p style="font-size: 20ch; text-align:center;">这里是购物车页面</p> -->
 
  <!-- 用户数据表单开始 -->
  <el-table
@@ -60,6 +60,30 @@
       </el-table-column>
     </el-table>
     <!-- 用户数据表单结束 -->
+    <div>
+      <el-row>
+    <el-button type="primary" style="float: right;margin-right: 300px;margin-top:10px;">提交订单</el-button>
+  </el-row>
+  </div>
+  <!-- ----------------------banner-------------- -->
+  <div id="banner">
+  <div class="banner">
+<div class="txt">
+<h4>Download mobile App and</h4><h2>save up to 20%</h2>
+<p>Aliquam a augue suscipit，luctus neque purus ipsum and neque dolor primis libero
+tempus,
+blandit varius</p>
+<div class="stores">
+<img class="appstore" src="http://localhost:8282/image/goods/appstore.png">
+<img class="appstore" src="http://localhost:8282/image/goods/googleplay.png">
+</div>
+</div>
+<div class="pic">
+<img src="http://localhost:8282/image/goods/e-shop.png">
+</div>
+</div>
+</div>
+ <!-- ----------------------banner-------------- -->
     </div>
 </template>
 
@@ -103,4 +127,69 @@ this.list()
 
 <style scoped>
 @import url("@/assets/css/menuOne.css");
+
+/*       banner      */
+
+#banner{
+  width: 100%;
+  height: 486px;
+  margin: 40px 0 o o;
+background-color: #f7be27;
+font-family: 'Oswald';
+color: #642f21;
+}
+
+#banner .banner{
+  width: 1140px;
+  height: 486px;
+  margin: 0 auto;
+  display: flex;
+}
+#banner .banner >div{
+  flex: 0 0 50%;
+  display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+#banner .banner .txt h2,#banner .banner .txt h4{
+  text-transform: uppercase;
+  margin: 6px o;
+}
+
+#banner .banner .txt .stores img{
+width: 163px;
+height: 50px;
+}
+#banner .banner .txt h2{
+font-size: 4.5rem;
+font-weight: 900;
+text-shadow: 1px 1px 0 #642f21 ;
+-webkit-text-stroke: 2px #642f21;
+margin-bottom: 10px;
+}
+#banner .banner .txt h4{
+  font-size: 2.375rem;
+}
+#banner .banner .txt .store img{
+float: left;
+}
+#banner .banner .txt p{
+  font-size: 1.2em;
+  padding-right: 104px;
+  margin: 0 0 25px;
+font-family: sans-serif;
+font-weight: 100;}
+
+#banner .banner .pic{ 
+  position: relative;
+}
+
+#banner .banner .pic{position: relative;}
+
+#banner .banner .pic img{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
 </style>

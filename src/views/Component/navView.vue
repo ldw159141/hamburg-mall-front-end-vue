@@ -14,6 +14,28 @@
             @click="toPage(index, item.com)"
           >
            {{ item.compName }}<span></span>
+           <div class="div" v-if="item.children">
+            <p class="p" v-for="(item, index) in item.children"
+            :key="index"
+            :class="index == active ? 'active' : ''"
+            @click="toPage(index, item.com)"
+            > {{ item.compName }}
+           
+            </p>
+           </div>
+           
+          <!-- <ul v-if="item.children">
+            <li
+            v-for="(item, index) in children"
+            :key="index"
+            :class="index == active ? 'active' : ''"
+            @click="toPage(index, item.com)"
+          >
+          {{ item.compName }}<span></span>
+          </li>
+
+          </ul> -->
+
           </li>
           <!-- <li>
             <router-link to="/">首页</router-link>
@@ -25,13 +47,13 @@
           <li class="basket-ico">
             <a href="">
               <i style="font-size: 32px" class="el-icon-shopping-bag-2">   </i>
-              <em class="roundpoint">2</em>
+              <em class="roundpoint">3</em>
             </a>
           </li>
         </router-link>
 
        <li>
-          <p class="el-icon-user-solid" v-if="admin==null" >
+          <p  class="el-icon-user-solid" v-if="admin==null" >
                 <router-link to="/login" style="color: #000;">请登录</router-link>  
                   </p> 
                 <el-dropdown v-if="admin!=null">
@@ -45,6 +67,7 @@
                 </el-dropdown>          
           </li>
         </ul>
+        
       </div>
     </div>
     <!-- 导航栏结束 -->
@@ -75,9 +98,16 @@ export default {
           com: "home",
         },
         {
-          compName: "MENU ONE",
+          compName: "MENU",
+          itemName: "菜单",
+          com: "",
+          children:[
+          {
+          compName: "MenuOne",
           itemName: "菜单1",
           com: "menuOne",
+        },
+          ]
         },
         {
           compName: "MEGAMENU",
@@ -100,7 +130,7 @@ export default {
           com: "",
         },
       ],
-      admin:{ username:'ldw'}
+      admin:null
         
          
           
@@ -110,13 +140,24 @@ export default {
 
   created() {
     this.active = this.$route.query.active;
+
+    let admin = JSON.parse(window.localStorage.getItem('userInfo'))
+          this.admin = admin
+             // 设置一小时的有效期
+             const expire = 1000 *60*60;
+             setTimeout(() => {
+             localStorage.setItem('userInfo', '')
+             this.admin=null
+             this.$router.push({ path:"/login" })
+            ElementUI.Message.error("登录失效，请重新登录")
+            }, expire)
   },
 
   mounted() {
     //mounted(){console.log("挂载完成");},这是第四个生命周期函数,表示内存中的模板,已经真实的挂载到了页面中, 用户已经可以看到渲染好的页面了
     //https://cn.vuejs.org/guide/essentials/lifecycle.html#lifecycle-diagram
     this.initSticky();
-    // this.getScrollTop();
+     this.getScrollTop();
   },
   methods: {
     initSticky() {
@@ -154,6 +195,20 @@ export default {
       this.$router.push(com);
     },
 
+    logout(){
+                let _this = this;
+                this.$confirm('注销登录吗?', '提示', {
+                    confirmButtonText: '确定',
+                    cancelButtonText: '取消',
+                    type: 'warning'
+                }).then(function () {
+                    
+                    localStorage.removeItem('userInfo')
+                    window.localStorage.clear()
+                    _this.admin=null
+                }).catch(()=>{})
+            }
+
 
   },
 };
@@ -161,4 +216,6 @@ export default {
 
 <style scoped>
 @import url("@/assets/css/nav.css");
+
+
 </style>
