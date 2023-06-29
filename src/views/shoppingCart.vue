@@ -62,7 +62,7 @@
     <!-- 用户数据表单结束 -->
     <div>
       <el-row>
-    <el-button type="primary" style="float: right;margin-right: 300px;margin-top:10px;">提交订单</el-button>
+    <el-button type="primary" style="float: right;margin-right: 200px;margin-top:10px;">提交订单</el-button>
   </el-row>
   </div>
   <!-- ----------------------banner-------------- -->
