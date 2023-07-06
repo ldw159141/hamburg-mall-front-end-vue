@@ -24,7 +24,7 @@
                   <i class="iconfont icon-quanping_o"></i>
                 </span>
               </div>
-              <div class="txt">
+              <div class="txt" @click="select(item)">
                 <a class="collect" href=""
                   ><span class="iconfont icon-changyongtubiao-fuben-68"></span
                 ></a>
@@ -39,7 +39,7 @@
               </div>
             </div>
             <div v-else>
-              <div class="txt">
+              <div class="txt" @click="select(item)">
                 <a class="collect" href=""
                   ><span class="iconfont icon-changyongtubiao-fuben-68"></span
                 ></a>
@@ -120,7 +120,11 @@ export default {
 
 
         
-    }
+    },
+    
+    select(item){
+                this.$router.push('/goodsDetailed?id='+item.id)
+            },
   
   }
 };

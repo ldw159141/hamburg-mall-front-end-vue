@@ -24,24 +24,7 @@
             </p>
            </div>
            
-          <!-- <ul v-if="item.children">
-            <li
-            v-for="(item, index) in children"
-            :key="index"
-            :class="index == active ? 'active' : ''"
-            @click="toPage(index, item.com)"
-          >
-          {{ item.compName }}<span></span>
           </li>
-
-          </ul> -->
-
-          </li>
-          <!-- <li>
-            <router-link to="/">首页</router-link>
-            <router-link to="/menuOne">菜单1</router-link>
-            <router-link to="/goodsDetailed">详情</router-link>
-          </li> -->
           <li class="yellow-color">159-1416-5802</li>
          <router-link to="/shoppingCart"> 
           <li class="basket-ico">
