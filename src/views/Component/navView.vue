@@ -36,7 +36,7 @@
         </router-link>
 
        <li>
-          <p  class="el-icon-user-solid" v-if="admin==null" >
+          <p  v-if="admin==null" >
                 <router-link to="/login" style="color: #000;">请登录</router-link>  
                   </p> 
                 <el-dropdown v-if="admin!=null">

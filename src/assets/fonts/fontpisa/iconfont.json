@@ -1,0 +1,23 @@
+{
+  "id": "4154267",
+  "name": "BurgerMall",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "自研xiang'm",
+  "glyphs": [
+    {
+      "icon_id": "1314008",
+      "name": "披萨",
+      "font_class": "pisa1",
+      "unicode": "e660",
+      "unicode_decimal": 58976
+    },
+    {
+      "icon_id": "1354087",
+      "name": "披萨",
+      "font_class": "pisa",
+      "unicode": "e62c",
+      "unicode_decimal": 58924
+    }
+  ]
+}

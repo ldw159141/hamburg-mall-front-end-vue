@@ -43,17 +43,28 @@
         <div class="row">
           <div class="item" v-for="(item,i) in goodList" :key="i" >
             <!-- <div class="item"  v-for="(item, j) in items" :key="j">  -->
-            <div class="pic">
+            <div class="pic" v-if="item.urls.length>1">
              
-                <el-image :src="baseurl+item.url" 
+                <el-image  :src="baseurl+item.url" 
               ref="" 
-              :preview-src-list="item.urls">
+              :preview-src-list="item.urls"> 
               </el-image>
-              <span class="item-code">Code: {{item.code}}</span>
+              <span class="item-code">Code: {{item.coder}}</span>
               <span class="item-zoom-ico">
                 <i class="iconfont icon-quanping_o"></i>
               </span>
             </div>
+            <div class="pic" v-if="item.goodsimg==null || item.goodsimg == '' || item.goodsimg ==[]">
+             
+              <el-image  :src="baseurl+item.url" 
+              ref="" 
+              :preview-src-list="[baseurl+item.url]">
+              </el-image>
+           <span class="item-code">Code: {{item.coder}}</span>
+           <span class="item-zoom-ico">
+             <i class="iconfont icon-quanping_o"></i>
+           </span>
+         </div>
             <div class="txt" @click="select(item)">
               <a class="collect" href=""
                 ><span class="iconfont icon-changyongtubiao-fuben-68"></span
@@ -87,6 +98,7 @@
 </template>
 
 <script>
+import '../assets/fonts/fontpisa/iconfont'
 import Axios from 'axios';
 export default {
   data: function () {
@@ -99,25 +111,25 @@ export default {
           name:"0",
           title: "burger",
           icon: "icon-Hamburger",
-          img: "http://localhost:8282/image/goods/burger-13.jpg",
+        //  img: "http://localhost:8282/image/goods/burger-13.jpg",
         },
         {
           name:"1",
-          title: "SIDES",
-          icon: "icon-fries",
-          img: "http://localhost:8282/image/goods/burger-12.jpg",
+          title: "PIZZA",
+          icon: "icon-pisa1",
+        //  img: "http://localhost:8282/image/goods/burger-12.jpg",
         },
         {
           name:"2",
           title: "SALADS",
           icon: "icon-cola",
-          img: "http://localhost:8282/image/goods/burger-15.jpg",
+       //   img: "http://localhost:8282/image/goods/burger-15.jpg",
         },
         {
           name:"3",
           title: "cookie",
           icon: "icon-doughnut",
-          img: "http://localhost:8282/image/goods/burger-14.jpg",
+        //  img: "http://localhost:8282/image/goods/burger-14.jpg",
         },
       ],
     };
@@ -157,9 +169,24 @@ export default {
   )}
       } else if (tab.index == 1) {
         //网络请求2   
-        //alert(1) 
         this.goodList = []
-         
+        {
+      const _this = this
+      Axios.get("http://localhost:8282/goods/pizzaList/").then(function (resp) {
+        console.log(resp)
+        _this.goodList = resp.data.data.data
+        _this.baseurl = 'http://localhost:8282/image/goods/'
+ for (var k in _this.goodList) {
+       var img=[]
+        var goodsimg = _this.goodList[k].goodsimg
+        for (var i in goodsimg) {
+          img.push(_this.baseurl + goodsimg[i].url)
+        }
+        _this.goodList[k]["urls"]= img
+      }
+
+      }
+  )}
       } else if(tab.index==2){
        //网络请求3
        // alert(2)
@@ -183,6 +210,7 @@ export default {
 </script>
 
 <style scoped>
+@import url("../assets/fonts/fontpisa/iconfont.css");
 @import url("@/assets/css/menuOne.css");
 @import url("@/assets/css/nav.css");
 * {

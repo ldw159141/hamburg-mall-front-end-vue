@@ -25,9 +25,17 @@
         <div class="tabs">
                              
           <el-tabs  style="height: 200px">
-                                   
-            <el-tab-pane v-for="item in good.goodsimg" :key="item">
-                      <img :src="item" alt="" />                     
+                  <el-tab-pane v-if="good.goodsimg ==null || good.goodsimg ==''" v-for="item in good.url" :key="item">
+                      <el-image :src="item" alt="" :preview-src-list="item"></el-image>                     
+              <template slot="label">
+                                               
+             <img class="tabs-img" :src="item" alt="" />                  
+                     
+              </template>
+                                      
+            </el-tab-pane>                 
+            <el-tab-pane  v-for="item in good.goodsimg" :key="item">
+                      <el-image :src="item" alt="" :preview-src-list="item"></el-image>                   
               <template slot="label">
                                                
              <img class="tabs-img" :src="item" alt="" />                  
@@ -320,6 +328,7 @@ export default {
               
               _this.good = resp.data.data
               _this.baseurl = 'http://localhost:8282/image/goods/'
+              _this.good.url=[_this.baseurl+resp.data.data.url]
           })
           },
 
